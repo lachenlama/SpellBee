@@ -8,7 +8,6 @@
     <h1>Word List</h1>
     <ul>
         <h1>Randomly Generated Word</h1>
-        <p>SerialNO: {{ generated_word.serialno }}</p>
         <p>Here's a randomly generated word: <strong>{{ generated_word.word }}</strong></p>
         <p>Origin: {{ generated_word.origin }}</p>
         <p>Meaning: {{ generated_word.meaning }}</p>
@@ -18,8 +17,13 @@
         {% csrf_token %}
         <button name="Sheet" value="Sheet1" type="submit">Sheet1</button>
         <button name="Sheet" value="Sheet2" type="submit">Sheet2</button>
-        <button name="Sheet" value="Sheet3" type="submit">Sheet2</button>
+        <!-- <button name="Sheet" value="Sheet3" type="submit">Sheet2</button> -->
         <button name="Sheet" value="Sheet4" type="submit">Sheet4</button>
         <button name="Sheet" value="Sheet5" type="submit">Sheet5</button>
+    </form>
+    <form method="post" action="{% url 'reset' %}">
+        {% csrf_token %}
+        <button type="submit" name="reset">Reset</button>
+    </form>
 </body>
 </html>
