@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+.gradient {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(-45deg, #230000,#25000f,#0d0d0e,#00222f,#200000);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+@keyframes gradient {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+
+/* For Header */
+.navBar{
+    height: 200px;
+    /* background-color: red; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    margin-top: -80px;
+}
+.left-box{
+    height: 200px;
+    /* background-color: #054141; */
+}
+.left-box img{
+    width: 100%;
+    height: 100%;
+    margin-left: 15px
+}
+.center-box{
+    /* width: 33%; */
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    /* background-color: aquamarine; */
+}
+.center-box h1{
+    text-transform: uppercase;
+    font-size: 40px;
+}
+.right-box{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    /* background-color:#230000; */
+}
+.right-box i{
+    font-size: 25px;
+    padding: 0 10px;
+    text-decoration: none;
+    background:none;
+}
+.fa-linkedin{
+    margin-right: 40px;
+}
+
+
+/* For Buttons */
+.but-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    padding-top: 50px;
+    width: 80%;
+    justify-content:space-between;
+}
+.pages-container{
+    display: flex;
+    flex-direction: row;
+}
+.Btn {
+display: flex;
+align-items: center;
+justify-content: flex-start;
+width: 45px;
+height: 45px;
+border: none;
+border-radius: 50%;
+cursor: pointer;
+position: relative;
+overflow: hidden;
+transition-duration: .3s;
+box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+background-color: rgb(5, 65, 65);
+margin: 0 3px;
+}
+
+/* plus sign */
+.sign {
+width: 100%;
+transition-duration: .3s;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.sign svg {
+width: 17px;
+}
+
+.sign svg path {
+fill: white;
+}
+/* text */
+.text {
+position: absolute;
+right: 0%;
+width: 0%;
+opacity: 0;
+color: white;
+font-size: 1.2em;
+font-weight: 600;
+transition-duration: .3s;
+}
+/* hover effect on button width */
+.Btn:hover {
+width: 125px;
+border-radius: 40px;
+transition-duration: .3s;
+}
+
+.Btn:hover .sign {
+width: 30%;
+transition-duration: .3s;
+padding-left: 20px;
+}
+/* hover effect button's text */
+.Btn:hover .text {
+opacity: 1;
+width: 70%;
+transition-duration: .3s;
+/* padding-right: 10px; */
+}
+/* button click effect*/
+.Btn:active {
+transform: translate(2px ,2px);
+}
+
+
+/* Reset Button CSS */
+
+.reset-btn {
+    --main-focus: #2d8cf0;
+    --font-color: #dedede;
+    --bg-color-sub: #222;
+    --bg-color: #054141;
+    --main-color: #dedede;
+    position: relative;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.reset-btn,
+.button__icon,
+.button__text {
+    transition: all 0.3s;
+}
+
+.reset-btn .button__text {
+    transform: translateX(33px);
+    color: var(--font-color);
+    font-weight: 600;
+}
+
+.reset-btn .button__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 39px;
+    background-color: var(--bg-color-sub);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reset-btn .svg {
+    width: 20px;
+    fill: var(--main-color);
+}
+
+.reset-btn:hover {
+    background: var(--bg-color);
+}
+
+.reset-btn:hover .button__text {
+    color: transparent;
+}
+
+.reset-btn:hover .button__icon {
+    width: 148px;
+    transform: translateX(0);
+}
+
+.reset-btn:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px var(--main-color);
+}
+
+
+/* For Main Body */
+.container{
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+    height: 300px;
+    width: 65%;
+    flex-direction: column;
+    /* border: 2px solid white; */
+}
+.word-container{
+    margin: auto;
+}
+.word-container h2{
+    text-transform: uppercase;
+    font-size: 100px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    /* margin-top: -100px; */
+}
+.word-container h3{
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.word-details{
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    flex-wrap: wrap;
+   
+}
+.wrd-det{
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+  
+    /* display: flex; */
+    flex-direction: row;
+    /* align-items: center; */
+}
+.word-details h4{
+    font-size: 20px;
+    font-weight: 300;
+}
