@@ -19,7 +19,8 @@ def word_generator_sheet1(request):
         generated_word = random.choice(generated_word)
         generated_word.used = True
         generated_word.save()
-        return generated_word
+    rem = Sheet1.objects.filter(used=False).count()
+    return generated_word, rem
 
 
 def word_generator_sheet2(request):
@@ -28,7 +29,8 @@ def word_generator_sheet2(request):
         generated_word = random.choice(generated_word)
         generated_word.used = True
         generated_word.save()
-        return generated_word
+    rem = Sheet2.objects.filter(used=False).count()
+    return generated_word, rem
 
 
 # def word_generator_sheet3(request):
@@ -42,7 +44,8 @@ def word_generator_sheet4(request):
         generated_word = random.choice(generated_word)
         generated_word.used = True
         generated_word.save()
-        return generated_word
+    rem = Sheet4.objects.filter(used=False).count()
+    return generated_word, rem
 
 
 def word_generator_sheet5(request):
@@ -51,24 +54,26 @@ def word_generator_sheet5(request):
         generated_word = random.choice(generated_word)
         generated_word.used = True
         generated_word.save()
-        return generated_word
+    rem = Sheet5.objects.filter(used=False).count()
+    return generated_word, rem
 
 
 def display(request):
     generated_word = None
+    rem = None
     if request.method == "POST":
         sheet = request.POST.get("Sheet")
         if sheet == 'Sheet1':
-            generated_word = word_generator_sheet1(request)
+            generated_word, rem = word_generator_sheet1(request)
         elif sheet == 'Sheet2':
-            generated_word = word_generator_sheet2(request)
+            generated_word, rem = word_generator_sheet2(request)
         # elif sheet == 'Sheet3':
         #     generated_word = word_generator_sheet3(request)
         elif sheet == 'Sheet4':
-            generated_word = word_generator_sheet4(request)
+            generated_word, rem = word_generator_sheet4(request)
         elif sheet == 'Sheet5':
-            generated_word = word_generator_sheet5(request)
+            generated_word, rem = word_generator_sheet5(request)
         else:
-            return render(request, 'Appli/word_list.html', {'generated_word':None})
+            return render(request, 'Appli/word_list.html', {'generated_word':None, 'rem':None})
     
-    return render(request, 'Appli/word_list.html', {'generated_word':generated_word})
+    return render(request, 'Appli/word_list.html', {'generated_word':generated_word, 'rem':rem})

@@ -12,6 +12,7 @@
         <p>Origin: {{ generated_word.origin }}</p>
         <p>Meaning: {{ generated_word.meaning }}</p>
         <p>Sentence: {{ generated_word.sentence }}</p>
+        <p>Remaning words : {{ rem }}</p>
     </ul>
     <form method="post">
         {% csrf_token %}
