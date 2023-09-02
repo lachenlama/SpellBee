@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spelling Bee</title>
-    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 's2.png' %}">
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <script src="https://kit.fontawesome.com/0d993ba01d.js" crossorigin="anonymous"></script>
 </head>
@@ -18,7 +19,7 @@
             </div>
             <div class="center-box">
                 <h1>
-                    Ahlis Interschool
+                    Ahlis Inter-school Spelling Bee
                 </h1>
             </div>
             <div class="right-box">
@@ -73,7 +74,7 @@
                 </button>
             </form>
 
-            <h4><span class="wrd-det">Remaining Words : </span> {{ rem }}</h4>
+            <h4><span class="wrd-det">Words Left {{ sheetno }}: </span> {{ rem }}</h4>
 
 
             <form method="post" class="pages-container">
@@ -86,10 +87,10 @@
                     <div class="sign"><i class="fa-solid fa-2"></i></div>
                     <div class="text">Sheet2</div>
                 </button>
-                <!-- <button class="Btn" class="Btn" name="Sheet" value="Sheet3" type="submit">
+                <button class="Btn" class="Btn" name="Sheet" value="Sheet3" type="submit">
                     <div class="sign"><i class="fa-solid fa-3"></i></div>
                     <div class="text">Sheet3</div>
-                </button> -->
+                </button>
                 <button class="Btn" class="Btn" name="Sheet" value="Sheet4" type="submit">
                     <div class="sign"><i class="fa-solid fa-4"></i></div>
                     <div class="text">Sheet4</div>
